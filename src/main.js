@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import Vant from 'vant';
+import './assets/fonts/iconfont.js'
+import './assets/fonts/iconfont.css'
+
 import 'vant/lib/index.css';
 
 Vue.use(Vant);
