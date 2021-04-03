@@ -1,9 +1,10 @@
 <template>
   <div class="plant">
     <img src="../assets/img/giphy.gif" alt="">
-    <h4 class="hum">{{nowData.hum}}°C</h4>
-    <h4>当前湿度</h4>
-    <van-progress :percentage="nowData.temp" stroke-width="15px"/>
+    <h4 class="hum">{{nowData.hum}}</h4>
+    <h4 class="temp">{{nowData.temp}}°C</h4>
+    <!-- <h4>当前湿度</h4>
+    <van-progress :percentage="nowData.temp" stroke-width="15px"/> -->
     <div class="btn-content">
     <van-button class="btn" type="info" round  @click="watering">点击浇水</van-button>
     <van-button class="btn" type="info" round  @click="bind" color="#07c160">绑定植物</van-button>
@@ -55,11 +56,19 @@ img {
 }
 .hum{
   position: absolute;
-  top: 30px;
-  left: 50%;
+  top: 28px;
+  left: 20%;
   text-shadow: 5px 5px 5px black, 0px 0px 2px black;
   color: white;
   font-size: 30px;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
+}
+.temp{
+  position: absolute;
+  top: 28px;
+  right: 20%;
+  text-shadow: 5px 5px 5px black, 0px 0px 2px black;
+  color: white;
+  font-size: 30px;
 }
 </style>

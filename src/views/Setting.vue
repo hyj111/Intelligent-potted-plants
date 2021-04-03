@@ -1,6 +1,5 @@
 <template>
-  <div class="about">
-    <h1>This is an setting page</h1>
+  <div class="setting">
   </div>
 </template>
 <script>
@@ -9,5 +8,8 @@ export default {
 }
 </script>
 <style scoped>
-
+.setting {
+  background: #ffcbd2;
+  height: 100vh;
+}
 </style>

@@ -13,4 +13,11 @@ export function GetNowData(data){
    })
 }
 
+export function OpenClose(data) {
+    return service.request({
+        method: "post",
+        url: `/cmds?`,       
+    })
+}
+
 

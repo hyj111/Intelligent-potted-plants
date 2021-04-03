@@ -6,7 +6,9 @@ import './assets/fonts/iconfont.js'
 import './assets/fonts/iconfont.css'
 
 import 'vant/lib/index.css';
-
+// import * as echarts from 'echarts'
+// Vue.prototype.echarts = echarts
+// Vue.use(echarts)
 Vue.use(Vant);
 Vue.config.productionTip = false
 

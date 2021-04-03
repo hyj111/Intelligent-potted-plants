@@ -7,6 +7,7 @@
 <style>
 @import url("assets/css/base.css");
 #app {
+    
 }
 
 </style>
