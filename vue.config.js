@@ -8,7 +8,7 @@ module.exports = {
         'components': '@/components',
         'network': '@/network',
         'views': '@/views',
-        'utils':'@/utils'
+        'utils': '@/utils'
       }
     }
   },
@@ -20,15 +20,30 @@ module.exports = {
     hot: true, // 开启热加载
     hotOnly: false,
     proxy: {
-      "/devApi": {
-        target: "http://api.heclouds.com/devices/694205832", //API服务器的地址
+      // "/devApi": {
+      //   target: "http://api.heclouds.com/devices/694205832", //API服务器的地址
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //       "^/devApi": ''
+      //   }
+      // }
+      // 需要配置两个跨域地址
+      // 这是后端的接口
+      [process.env.VUE_APP_API_LOGIN]: {
+        target: process.env.VUE_API_DEV_LOGIN_TARGET, //API服务器的地址
         changeOrigin: true,
         pathRewrite: {
-            "^/devApi": ''
+          [`^${process.env.VUE_APP_API_LOGIN}`]: ''
+        }
+      },
+      // 这是前端接口
+      [process.env.VUE_APP_API_WEB]: {
+        target: process.env.VUE_API_DEV_WEB_TARGET, //API服务器的地址
+        changeOrigin: true,
+        pathRewrite: {
+          [`^${process.env.VUE_APP_API_WEB}`]: ''
         }
       }
-
-      // http://www.web-jshtml.cn/api/vue3  /api/getCode
     }
   }
 }

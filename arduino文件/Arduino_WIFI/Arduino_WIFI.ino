@@ -32,7 +32,6 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 void callback(char *topic, byte *payload, unsigned int length)
 {
-  
     Serial.print("Message arrived [");
     Serial.print(topic);
     Serial.print("] ");
@@ -41,20 +40,15 @@ void callback(char *topic, byte *payload, unsigned int length)
         Serial.print((char)payload[i]);
     }
     Serial.println();
-
-    // 平台发来命令“1”时开灯
     if ((char)payload[0] == '1')
     { 
-      Serial.print("11111111111111111111111111111111111111111111111111111111");
     switch0 = 1;
     
     }
     else
     {
        switch0 = 0;
-       Serial.print("222222222222222222222222222222222");
-    }
-    
+    }   
 }
 void reconnect (){
   while(!client.connected()){
